@@ -1,0 +1,395 @@
+@import "./font";
+@import "./variables";
+@import "./responsive";
+
+body {
+  position: relative;
+  font-family: "NotoSansJP", "Inter", system-ui, Arial, sans-serif;
+  font-size: font-size($font-size-base);
+  line-height: $line-height-base;
+  color: $dark-600;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+ol,
+ul {
+  padding-left: 15px;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #007dba;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+a,
+button,
+input {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea {
+  border: 1px solid #b5b5b5;
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #757575;
+  border-radius: 0;
+}
+
+button,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #c1bcbc;
+  outline: none;
+}
+
+/**
+Header
+**/
+.header {
+  position: relative;
+  background-color: $dark-500;
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    max-width: 109px;
+    max-height: 40px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .menu-inner {
+    display: flex;
+    align-items: center;
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        min-width: 160px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 8px;
+        .icon {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+        }
+      }
+      span {
+        color: $light;
+      }
+    }
+
+    .btn-menu {
+      background-color: transparent;
+      border: none;
+      outline: 0;
+      box-shadow: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-info {
+  display: flex;
+  .achievement-rate {
+    position: relative;
+    background-image: url("../images/d01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 42%;
+    height: 316px;
+    filter: contrast(150%);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(225deg, #ffcc21 0%, #ff963c 100%);
+      opacity: 0.25;
+    }
+    .info-inner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      span {
+        font-family: "Inter";
+        color: $light;
+        font-size: 18px;
+        font-weight: 300;
+        &.big-text {
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 30px;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  .body-weight {
+    position: relative;
+    background-color: $dark-600;
+    width: 58%;
+  }
+}
+
+.category {
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+  display: flex;
+  .category-inner {
+    display: flex;
+    gap: 74px;
+    margin: 0 auto;
+    justify-content: center;
+    .item {
+      background: linear-gradient(155.89deg, #ffcc21 8.26%, #ff963c 91.18%);
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 134px;
+      height: 116px;
+      img {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+      }
+      span {
+        font-family: "Inter";
+        color: $light;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.meal-history {
+  margin-bottom: 64px;
+  .list-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .item {
+      position: relative;
+      width: calc(25% - 8px);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .info {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 8px;
+        background-color: $primary-300;
+        color: $light;
+        font-family: "Inter";
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.15px;
+      }
+    }
+  }
+
+  .btn-read-more {
+    width: 296px;
+    background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    color: $light;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 16px 0;
+    font-size: 18px;
+    margin-top: 28px;
+  }
+}
+
+.footer {
+  background-color: $dark-500;
+  .menu-footer {
+    padding: 56px 0;
+    display: flex;
+    gap: 45px;
+    .item {
+      font-family: "Hiragino Kaku Gothic Pro";
+      color: $light;
+      font-size: 11px;
+      font-weight: 300;
+    }
+  }
+}
